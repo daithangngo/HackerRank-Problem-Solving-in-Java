@@ -12,8 +12,6 @@ public class StdinAndStdout {
         int b = scanner.nextInt();
         int c = scanner.nextInt();
 
-        System.out.println(a);
-        System.out.println(b);
-        System.out.println(c);
+        System.out.println(a + "\n" + b + "\n" + c + "\n");
     }
 }
