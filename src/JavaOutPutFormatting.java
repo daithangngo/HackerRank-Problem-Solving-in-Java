@@ -16,10 +16,12 @@ public class JavaOutPutFormatting {
         String str3 = scanner.next();
         int num3 = scanner.nextInt();
 
+        // -  makes it formatted from left to right
+        //0 before the #of digits/strings/... makes the pads-> zero filler
         System.out.println("================================");
-        System.out.printf("%-15s%3d\n", str1, num1);
-        System.out.printf("%-15s%3d\n", str2, num2);
-        System.out.printf("%-15s%3d\n", str3, num3);
+        System.out.printf("%-15s%03d\n", str1, num1);
+        System.out.printf("%-15s%03d\n", str2, num2);
+        System.out.printf("%-15s%03d\n", str3, num3);
         System.out.println("================================");
     }
 }
