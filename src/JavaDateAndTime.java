@@ -1,11 +1,7 @@
 import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.Scanner;
 
-public class Solution {
+public class JavaDateAndTime {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String date = scanner.nextLine();
