@@ -4,13 +4,6 @@ import java.util.Scanner;
 
 public class StringIntroduction {
     public static void main(String[] args) {
-        /*
-        Java Reflection
-        ability to examine or modify the runtime behavior of applications running the Java virtual machine
-        keine Optimierungen nicht möglich, da wir erst zur Laufzeit die Methoden wählen
-        keine grundlegenden Änderungen nötig
-         */
-
         Scanner scanner = new Scanner(System.in);
         String firstStr = scanner.next();
         String secondStr = scanner.next();
