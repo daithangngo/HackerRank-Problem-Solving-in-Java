@@ -1,6 +1,4 @@
-import java.util.Scanner;
-
-public class Trash {
+public class Solution {
     public static void main(String[] args) {
 
     }

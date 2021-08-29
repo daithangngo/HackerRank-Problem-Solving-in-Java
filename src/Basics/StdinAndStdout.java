@@ -1,7 +1,5 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.InputStreamReader;
-import java.util.NoSuchElementException;
+package Basics;
+
 import java.util.Scanner;
 
 public class StdinAndStdout {
