@@ -9,7 +9,6 @@ public class BigIntegers {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner((System.in));
-
         BigInteger b1 = sc.nextBigInteger();
         BigInteger b2 = sc.nextBigInteger();
 
