@@ -3,7 +3,6 @@ package ProblemSolving.DataStructures;
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
-
 import static java.util.stream.Collectors.toList;
 
 public class TwoDArray {
@@ -47,7 +46,6 @@ public class TwoDArray {
                 int br = arr[i + 1][j + 1];
 
                 int sum = tl + om + tr + m + bl + bm + br;
-
                 if (sum > largestSum) {
                     largestSum = sum;
                 }
