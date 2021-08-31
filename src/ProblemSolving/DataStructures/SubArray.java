@@ -14,12 +14,12 @@ public class SubArray {
         for (int i = 0; i < numArr.length; i++) {
             int j = i;
             int sum = 0;
-            while (j != numArr.length - 1) {
+            while (j != numArr.length) {
                 sum += numArr[j];
                 if (sum < 0) negSubArrCounter++;
                 j++;
             }
         }
-        System.out.println(negSubArrCounter);>
+        System.out.println(negSubArrCounter);
     }
 }
