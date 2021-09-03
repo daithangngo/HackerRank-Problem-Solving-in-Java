@@ -1,9 +1,13 @@
+package ProblemSolving;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
-public class Solution {
+public class Algo {
 
     //A Very Big Sum
     public static long aVeryBigSum(List<Long> ar) {
@@ -47,6 +51,19 @@ public class Solution {
         System.out.printf("%.6f\n", (double) pos / (double) arr.size());
         System.out.printf("%.6f\n", (double) neg / (double) arr.size());
         System.out.printf("%.6f\n", (double) zero / (double) arr.size());
+    }
+
+    //Staircase
+    public static void staircase(int n) {
+        char[] s = new char[n];
+        for (int i = n - 1; i >= 0; i--) {
+            s[i] = ' ';
+        }
+        for (int i = n - 1; i >= 0; i--) {
+            s[i] = '#';
+            String str = String.valueOf(s);
+            System.out.println(str);
+        }
     }
 
 
