@@ -1,11 +1,7 @@
 package ProblemSolving;
 
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class Algo {
 
@@ -64,6 +60,11 @@ public class Algo {
             String str = String.valueOf(s);
             System.out.println(str);
         }
+    }
+
+    //Mini-Max Sum
+    public static void miniMaxSum(List<Integer> arr) {
+
     }
 
 
