@@ -1,4 +1,4 @@
-package ProblemSolving.DataStructures;
+package ProblemSolving.DataStructures.Array;
 
 import java.util.Scanner;
 
