@@ -2,6 +2,10 @@ package ProblemSolving;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toList;
 
 public class Algo {
 
@@ -64,8 +68,27 @@ public class Algo {
 
     //Mini-Max Sum
     public static void miniMaxSum(List<Integer> arr) {
-
+        long min = arr.stream()
+                .sorted()
+                .map(Long::new)
+                .limit(4)
+                .reduce(Long::sum)
+                .get();
+        long max = arr.stream()
+                .sorted()
+                .map(Long::new)
+                .skip(1)
+                .reduce(Long::sum)
+                .get();
+        System.out.printf("%d %d", min, max);
     }
 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        List<Integer> arr = Stream.of(scanner.nextLine().replaceAll("\\s+$", "").split(" "))
+                .map(Integer::parseInt)
+                .collect(toList());
+        miniMaxSum(arr);
+    }
 
 }
