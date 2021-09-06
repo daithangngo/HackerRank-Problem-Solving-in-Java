@@ -65,7 +65,7 @@ public class Algo {
     }
 
     //Mini-Max Sum
-    public static void miniMaxSum(List<Integer> arr) {
+    /*public static void miniMaxSum(List<Integer> arr) {
         long min = arr.stream()
                 .sorted()
                 .map(Long::new)
@@ -79,7 +79,7 @@ public class Algo {
                 .reduce(Long::sum)
                 .get();
         System.out.printf("%d %d", min, max);
-    }
+    } */
 
     //Birthday Cake Candles
     public static int birthdayCakeCandles(List<Integer> candles) {
@@ -89,22 +89,28 @@ public class Algo {
             if (candles.get(i) > tallestElem) {
                 tallestCount = 1;
                 tallestElem = candles.get(i);
-            }else if(candles.get(i) == tallestElem){
+            } else if (candles.get(i) == tallestElem) {
                 tallestCount++;
             }
         }
         return tallestCount;
     }
 
-    public static void main(String[] args) {
-        List<Integer> candles = new ArrayList<>();
-        candles.add(3);
-        candles.add(2);
-        candles.add(3);
-        candles.add(3);
-        System.out.println(candles.toString());
-        System.out.println(birthdayCakeCandles(candles));
+    //Time Conversion
+    public static String timeConversion(String s) {
+        String hourDigits = (s.substring(0, 2));
+        boolean isAM = s.substring(8).equals("AM");
+        if (isAM) {
+            if (hourDigits.equals("12")) hourDigits = "00";
+        } else {
+            hourDigits = Integer.parseInt(hourDigits) + 12 + "";
+            if (hourDigits.equals("24")) hourDigits = "12";
+        }
+        return hourDigits + s.substring(2, 8);
+    }
 
+    public static void main(String[] args) {
+        System.out.println(timeConversion("07:05:45PM"));
     }
 
 }
