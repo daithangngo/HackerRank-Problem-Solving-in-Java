@@ -30,6 +30,39 @@ public class TwoSubArraysTest {
     }
 
     @Test
+    public void testCreatePermutation2(){
+        int[]array = {2, 3, 1};
+        List a = new ArrayList();
+        List b = new ArrayList();
+        List c = new ArrayList();
+        List d = new ArrayList();
+        List e = new ArrayList();
+        List f = new ArrayList();
+
+        a.add(2);
+        b.add(3);
+        c.add(1);
+        d.add(2);d.add(3);
+        e.add(3);e.add(1);
+        f.add(2);f.add(3);f.add(1);
+
+        List<List<Integer>> perm = new ArrayList<>();
+        perm.add(a);
+        perm.add(d);
+        perm.add(f);
+        Assertions.assertEquals(perm, TwoSubArrays.createPermutation(0,array ));
+
+        List<List<Integer>> perm2 = new ArrayList<>();
+        perm2.add(b);
+        perm2.add(e);
+        Assertions.assertEquals(perm2, TwoSubArrays.createPermutation(1,array ));
+
+        List<List<Integer>> perm3 = new ArrayList<>();
+        perm3.add(c);
+        Assertions.assertEquals(perm3, TwoSubArrays.createPermutation(2,array ));
+    }
+
+    @Test
     public void testSum() {
         List<Integer> list = new ArrayList<>();
         list.add(3);
@@ -67,5 +100,13 @@ public class TwoSubArraysTest {
         List<Integer> list = new ArrayList<>();
         list.add(1);
         Assertions.assertEquals(0, TwoSubArrays.computeG(list));
+    }
+
+    @Test
+    public void testInc(){
+        List<Integer> perm = new ArrayList<>();
+        perm.add(1);
+
+        Assertions.assertEquals(1, TwoSubArrays.inc(perm));
     }
 }

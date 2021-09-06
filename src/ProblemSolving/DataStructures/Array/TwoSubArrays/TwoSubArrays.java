@@ -2,11 +2,12 @@ package ProblemSolving.DataStructures.Array.TwoSubArrays;
 
 import java.util.*;
 
+
 public class TwoSubArrays {
+
     public static void main(String[] args) {
         //array
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the Array size");
         int[] array = new int[scanner.nextInt()];
         scanner.nextLine();
         for (int i = 0; i < array.length; i++) {
@@ -31,6 +32,9 @@ public class TwoSubArrays {
         int g = Integer.MIN_VALUE;
         int numSatisfied = 0;
         for (List<Integer> a : permuMap.keySet()) {
+            if (permuMap.get(a) == g && a.size() == minSize) {
+                numSatisfied++;
+            }
             if (permuMap.get(a) > g) {
                 g = permuMap.get(a);
                 minSize = a.size();
@@ -40,13 +44,9 @@ public class TwoSubArrays {
                 minSize = a.size();
                 numSatisfied = 1;
             }
-            if (permuMap.get(a) == g && a.size() == minSize) {
-                numSatisfied++;
-            }
         }
         System.out.printf("%d %d", g, numSatisfied);
     }
-
 
     static List<List<Integer>> createPermutation(int index, int[] array) {
         List<List<Integer>> permutationList = new ArrayList<>();
@@ -80,8 +80,7 @@ public class TwoSubArrays {
         int sum, curr;
         sum = curr = permutation.get(0);
         if (permutation.size() > 1) {
-            int i = 0;
-            //TODO : index out of bounds problem
+            int i = 1;
             while (permutation.get(i) > curr) {
                 sum += permutation.get(i);
                 curr = permutation.get(i);
