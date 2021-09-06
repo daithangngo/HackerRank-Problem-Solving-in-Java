@@ -1,8 +1,6 @@
 package ProblemSolving;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
@@ -83,12 +81,30 @@ public class Algo {
         System.out.printf("%d %d", min, max);
     }
 
+    //Birthday Cake Candles
+    public static int birthdayCakeCandles(List<Integer> candles) {
+        int tallestCount = 1;
+        int tallestElem = candles.get(0);
+        for (int i = 1; i < candles.size(); i++) {
+            if (candles.get(i) > tallestElem) {
+                tallestCount = 1;
+                tallestElem = candles.get(i);
+            }else if(candles.get(i) == tallestElem){
+                tallestCount++;
+            }
+        }
+        return tallestCount;
+    }
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        List<Integer> arr = Stream.of(scanner.nextLine().replaceAll("\\s+$", "").split(" "))
-                .map(Integer::parseInt)
-                .collect(toList());
-        miniMaxSum(arr);
+        List<Integer> candles = new ArrayList<>();
+        candles.add(3);
+        candles.add(2);
+        candles.add(3);
+        candles.add(3);
+        System.out.println(candles.toString());
+        System.out.println(birthdayCakeCandles(candles));
+
     }
 
 }
