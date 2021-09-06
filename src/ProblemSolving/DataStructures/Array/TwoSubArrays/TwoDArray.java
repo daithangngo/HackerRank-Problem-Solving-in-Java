@@ -1,4 +1,4 @@
-package ProblemSolving.DataStructures.Array;
+package ProblemSolving.DataStructures.Array.TwoSubArrays;
 
 import java.io.*;
 import java.util.*;

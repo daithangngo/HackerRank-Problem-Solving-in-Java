@@ -1,5 +1,6 @@
 package ProblemSolving;
 
+import java.io.PrintStream;
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -109,8 +110,12 @@ public class Algo {
         return hourDigits + s.substring(2, 8);
     }
 
+    //Two Subarrays
+
+
+
+
     public static void main(String[] args) {
-        System.out.println(timeConversion("07:05:45PM"));
     }
 
 }
