@@ -8,11 +8,12 @@ public class TwoSubArrays {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the Array size");
         int[] array = new int[scanner.nextInt()];
+        scanner.nextLine();
         for (int i = 0; i < array.length; i++) {
             array[i] = scanner.nextInt();
         }
 
-        //Todo
+        //map of permutations to g
         Map<List<Integer>, Integer> permuMap = new HashMap<>();
         for (int i = 0; i < array.length; i++) {
             List<List<Integer>> permutationList = createPermutation(i, array);
@@ -21,31 +22,74 @@ public class TwoSubArrays {
             }
         }
 
+        calcAndOutput(permuMap);
     }
 
-    //Todo
-     static List<List<Integer>> createPermutation(int index, int[] array) {
-        List<List<Integer>> permutationList = new LinkedList<>();
-        for (int i = index; i < array.length; i++) {
-            List<Integer> permutation = new LinkedList<>();
-            permutation.add(array[i]);
+    //calculation & output
+    static void calcAndOutput(Map<List<Integer>, Integer> permuMap) {
+        int minSize = 0;
+        int g = Integer.MIN_VALUE;
+        int numSatisfied = 0;
+        for (List<Integer> a : permuMap.keySet()) {
+            if (permuMap.get(a) > g) {
+                g = permuMap.get(a);
+                minSize = a.size();
+                numSatisfied = 1;
+            }
+            if (a.size() < minSize) {
+                minSize = a.size();
+                numSatisfied = 1;
+            }
+            if (permuMap.get(a) == g && a.size() == minSize) {
+                numSatisfied++;
+            }
         }
-        return null;
+        System.out.printf("%d %d", g, numSatisfied);
     }
 
-    //Todo
-     static int computeG(List<Integer> permutation) {
-        return 0;
+
+    static List<List<Integer>> createPermutation(int index, int[] array) {
+        List<List<Integer>> permutationList = new ArrayList<>();
+        int j = index;
+        while (j <= array.length - 1) {
+            List<Integer> permutation = new ArrayList<>();
+            for (int i = index; i <= j; i++) {
+                permutation.add(array[i]);
+            }
+            permutationList.add(permutation);
+            j++;
+        }
+        return permutationList;
     }
 
-    //Todo
-     static int sum(List<Integer> permutation) {
-        return 0;
+    static int computeG(List<Integer> permutation) {
+        return sum(permutation) - inc(permutation);
     }
 
-    //Todo
-     static int inc(List<Integer> permutation) {
-        return 0;
+    //sum of all the permutation's elements
+    static int sum(List<Integer> permutation) {
+        int sum = 0;
+        for (int a : permutation) {
+            sum += a;
+        }
+        return sum;
+    }
+
+    //sum of all strict increasing permutation's elements
+    static int inc(List<Integer> permutation) {
+        int sum, curr;
+        sum = curr = permutation.get(0);
+        if (permutation.size() > 1) {
+            int i = 0;
+            //TODO : index out of bounds problem
+            while (permutation.get(i) > curr) {
+                sum += permutation.get(i);
+                curr = permutation.get(i);
+                i++;
+                if (i > permutation.size() - 1) break;
+            }
+        }
+        return sum;
     }
 
 
